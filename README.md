@@ -1,12 +1,12 @@
 <h1 align="center"> anime.nvim 🪶 </h1>
 
-<p align="center"> Small Anime Widget For Neovim </p>
+<p align="center"> 𝓢𝓶𝓪𝓵𝓵 𝓐𝓷𝓲𝓶𝓮 𝓦𝓲𝓭𝓰𝓮𝓽 𝓕𝓸𝓻 𝓝𝓮𝓸𝓿𝓲𝓶 </p>
 
 <div align="center">
   <video src="https://user-images.githubusercontent.com/9482395/219360571-e4334893-38d6-443c-818a-698174ad6d2c.mp4
 " width=400/></video>
 </div>
-
+<p align="center">ᴾˡᵉᵃˢᵉ ˢᵉᵉ ᵗʰᵉ ᵈʳᵃᵍᵒⁿ ᵐᵃᶦᵈ ᵃᵗ ᵗʰᵉ ᵗᵒᵖʳᶦᵍʰᵗ ᶜᵒʳⁿᵉʳ</p>
 <br>
 
 **Warning: This plugin is using [Sixel](vector) graphics. So your terminal must support Sixel graphics.**
@@ -40,7 +40,8 @@ require('anime').setup({
   fps = {
     -- Dsipaly 16 frames per second
     base = 16,
-    -- 8 frames per second in slow mode
+    -- When your typing speed exceeds the threshold,
+    -- it will enter fast mode, otherwise it will enter slow mode
     slow = 8,
     fast = 24,
     -- Or you can set a function that return fps
