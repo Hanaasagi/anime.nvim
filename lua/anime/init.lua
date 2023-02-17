@@ -10,6 +10,8 @@ local _M = {
   },
   -- Timer
   timer = nil,
+  -- Is terminal compatible (nil, true or false)
+  is_compatible = nil,
 }
 
 local _DEFAULT_CONFIG = {
@@ -90,6 +92,13 @@ end
 local is_running = false
 local elapsed = {}
 _M.render = function()
+  if _M.is_compatible == nil then
+    return
+  elseif _M.is_compatible == false then
+    vim.fn.timer_stop(_M.timer)
+    return
+  end
+
   -- Avoid running concurrently
   if is_running then
     return
@@ -159,6 +168,9 @@ _M.render = function()
 end
 
 _M.setup = function(config)
+  local utils = require("anime/utils")
+  utils.check_compatibility(_M)
+
   config = vim.tbl_extend('force', _DEFAULT_CONFIG, config or {})
   _M.config = config
   _M.images = {}
